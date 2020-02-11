@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
+gem 'sprockets', '~> 3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'jquery-datatables'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

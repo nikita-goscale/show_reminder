@@ -1,1 +1,21 @@
-<h1>Index</h1>
+<h1 align='center'>Tv Shows</h1>
+<table align='center' id='tv_show_listing'>
+    <thead>
+        <tr>
+            <th>Channel name</th>
+            <th>Show</th>
+            <th>Show Date</th>
+            <th>Show Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @shows.each do |show_timing| %>
+            <tr>
+                <td><%= show_timing.tv_show.channel.name %></td>
+                <td><%= show_timing.tv_show.show_name %></td>
+                <td><%= show_timing.timing.strftime('%d/%m/%Y') %></td>
+                <td><%= show_timing.timing.strftime('%H:%M %p')%></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
