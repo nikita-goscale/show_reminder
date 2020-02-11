@@ -1,0 +1,5 @@
+<% if params[:favorite].eql?('true') && @favorite_show %>
+    $('.favorite_show[data-show-id=<%= params["show_id"]%>]').prop('checked', true);
+<% else %>
+    $('.favorite_show[data-show-id=<%= params["show_id"]%>]').prop('checked', false);
+<% end %>

@@ -9,6 +9,7 @@
 $(document).ready(function() {
     $('#tv_show_listing').DataTable({
         columns: [
+            { sortable: false, searchable: false },
             { sortable: false, searchable: true },
             { sortable: false, searchable: true },
             { sortable: false, searchable: false },
@@ -16,4 +17,18 @@ $(document).ready(function() {
           ]
         }
     );
-} );
+    favorite_show();
+});
+
+function favorite_show(){
+    $('.favorite_show').click(function(){
+        $.ajax({
+            url: "/favorite_shows",
+            type: 'POST',
+            data: {
+                show_id: $(this).data('show-id'),
+                favorite: $(this).prop('checked') 
+            }
+        });
+    })
+}

@@ -2,6 +2,7 @@
 <table align='center' id='tv_show_listing'>
     <thead>
         <tr>
+            <th>Favorite</th>
             <th>Channel name</th>
             <th>Show</th>
             <th>Show Date</th>
@@ -11,6 +12,7 @@
     <tbody>
         <% @shows.each do |show_timing| %>
             <tr>
+                <td><%= check_box :favorite, '', checked: current_user.favorite_tv_shows.exists?(tv_show_id: show_timing.tv_show.id), class: 'favorite_show', 'data-show-id': show_timing.tv_show.id %>
                 <td><%= show_timing.tv_show.channel.name %></td>
                 <td><%= show_timing.tv_show.show_name %></td>
                 <td><%= show_timing.timing.strftime('%d/%m/%Y') %></td>
